@@ -12,7 +12,7 @@ function App() {
   const location = useLocation();
 
   const [chatButtonclicked, SetChatButtonclicked] = useState(false);
-  const [username, setUsername] = useState(location != null && location.state != null && "username" in location.state ? location.state.username : null);
+  const [username] = useState(location != null && location.state != null && "username" in location.state ? location.state.username : null);
   const [roomId, setRoomId] = useState("");
 
   const isLoggedIn = (username != null && username !== "");

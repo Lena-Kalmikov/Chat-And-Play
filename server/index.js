@@ -260,7 +260,6 @@ io.on("connection", (socket) => {
   });
 });
 
-// 3001
 server.listen(process.env.PORT || 3001, () => {
   var addr = server.address();
   console.log('app listening on http://' + addr.address + ':' + addr.port);

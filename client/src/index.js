@@ -12,8 +12,8 @@ import { render } from "react-dom";
 render(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="Register" element={<Register />} />
+            <Route path="/" element={<Login />}></Route>
+            <Route path="Register" element={<Register />}></Route>
             <Route path="TalkBack" element={<App />}></Route>
         </Routes>
     </BrowserRouter>,

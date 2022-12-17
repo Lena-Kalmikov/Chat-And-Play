@@ -12,11 +12,10 @@ import { render } from "react-dom";
 render(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Login />}></Route>
-            <Route path="Register" element={<Register />}></Route>
-            <Route path="TalkBack" element={<App />}></Route>
+            <Route path="/" element={<Login />}></Route> 
+            <Route path="Register" element={<Register />}></Route> 
+            <Route path="TalkBack" element={<App />}></Route> 
         </Routes>
     </BrowserRouter>,
     document.getElementById("root")
-    
 );

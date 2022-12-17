@@ -12,7 +12,7 @@ function Chat(props) {
       console.log(`leaving room: ${props.roomId}`)
       socket.emit("leave_room", { "roomId": props.roomId })
     }
-  }, [])
+  }, [socket])
 
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -52,7 +52,7 @@ function Chat(props) {
       backToUsers();
     });
 
-  }, [socket]);
+  }, []);
 
   return (
     <div className="chat-window">

@@ -8,7 +8,7 @@ import Register from "./components/register";
 import { render } from "react-dom";
 
 //const root = ReactDOM.createRoot(document.getElementById("root"));
-process.env.CI = false
+
 render(
     <BrowserRouter>
         <Routes>

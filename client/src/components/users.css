@@ -1,0 +1,76 @@
+.users {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    vertical-align: top;
+    margin-top: -200px;
+    height: 350px;
+}
+
+#offline h2 {
+    color: rgba(128, 128, 128, 0.868);
+}
+
+.users h2 {
+    color: black;
+    text-align: left;
+    margin-left: 60px;
+    font-size: 22px;
+}
+
+#online h2:hover {
+    color: rgb(16, 227, 16);
+}
+
+h2.clicked{
+    color: rgb(16, 227, 16);
+    font-size: 24px;
+}
+
+.btn {
+    border: none;
+    border-radius: 20px;
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    margin: 3rem auto;
+    display: block;
+    background: #964bf1;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #7114c3f0;
+}
+
+.list-container-online,
+.list-container-offline {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(231, 227, 248, 0.457);
+    border-radius: 15px;
+    margin-left: 15px;
+}
+
+.list-container-offline {
+    background-color: rgba(231, 227, 248, 0.11);
+}
+
+.list-container-offline::-webkit-scrollbar {
+    display: none;
+}
+
+.list-container-online::-webkit-scrollbar {
+    display: none;
+}
+
+.dialogActions{
+    display: inline-block;
+    align-self: center;
+}
+
+.dialogContentText{
+    color: black;
+}

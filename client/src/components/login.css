@@ -1,0 +1,36 @@
+.loginContainer h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.loginContainer input {
+  width: 210px;
+  height: 40px;
+  margin: 7px;
+  border: 2px solid #7114c3f0;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.loginContainer button {
+  width: 225px;
+  height: 50px;
+  margin: 7px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  background: #7114c3f0;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.loginContainer button:hover {
+  background: #964bf1;
+}
+
+p {
+  font-size: large;
+}

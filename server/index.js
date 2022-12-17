@@ -11,8 +11,9 @@ app.use(cors());
 const server = http.createServer(app);
 
 const io = new Server(server, {
+  perMessageDeflate :false,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
@@ -259,6 +260,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
-  console.log("Server Running");
+// 3001
+server.listen(process.env.PORT || 3001, () => {
+  var addr = server.address();
+  console.log('app listening on http://' + addr.address + ':' + addr.port);
 });

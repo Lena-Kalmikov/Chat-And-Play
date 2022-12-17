@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/e5e241af-2428-4f15-9091-257897bab870/AppServices/subscriptions/e5e241af-2428-4f15-9091-257897bab870/resourceGroups/ChatApp/providers/Microsoft.Web/sites/chatgameapp",
+    "appService.deploySubpath": "server"
+}

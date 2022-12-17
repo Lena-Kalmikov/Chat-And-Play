@@ -91,10 +91,6 @@ function Game(props) {
 
   useEffect(() => {
     socket.emit("game_start", { "roomId": props.roomId });
-
-
-
-
   }, [])
 
   const handleSquareClick = (squareIndex) => {
@@ -134,6 +130,7 @@ function Game(props) {
 
   return (
     <div>
+      {isMyTurn ? (<p>My turn</p>):(<p>Not my turn</p>)}
       <ScoreBoard scores={scores} xPlaying={xPlaying} />
       <Board board={board} onClick={gameOver ? resetBoard : handleSquareClick} />
       <ResetButton resetBoard={askToResetGame} />

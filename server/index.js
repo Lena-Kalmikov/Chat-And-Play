@@ -260,7 +260,13 @@ io.on("connection", (socket) => {
   });
 });
 
+// config for Azure:
 server.listen(process.env.PORT || 3001, () => {
   var addr = server.address();
   console.log('app listening on http://' + addr.address + ':' + addr.port);
 });
+
+// //localhost:
+// server.listen(3001, () => {
+//   console.log("Server Running");
+// });

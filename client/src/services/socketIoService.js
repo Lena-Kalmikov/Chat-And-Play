@@ -6,4 +6,4 @@ const socket = io.connect("http://localhost:3001/");
 // //config for Azure:
 // const socket = io.connect("https://chatgameapp.azurewebsites.net");
 
-export default socket;
+export default socket; 

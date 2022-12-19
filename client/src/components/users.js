@@ -36,7 +36,7 @@ function Users(props) {
 
   const onJoinChatConfirmation = () => {
     socket.emit("join_room", { "request_answer": true, "roomId": roomId, "inviting_username": invitingUser })
-    console.log(`Joining chat room ${props.roomId}`)
+    console.log(`Joining chat room ${roomId}`)
     props.userWantsToChat(true);
     setJoinRoomDialogOpen(false)
   }

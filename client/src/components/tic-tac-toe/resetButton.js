@@ -3,7 +3,7 @@ import React from "react";
 
 export const ResetButton = ({ resetBoard }) => {
     return (
-        <div>        
+        <div>
             <button className="reset-btn" onClick={resetBoard}>Reset Game</button>
         </div>
     )

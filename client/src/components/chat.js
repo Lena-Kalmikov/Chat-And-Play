@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import socket from "../services/socketIoService";
 
-
 function Chat(props) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -48,7 +47,7 @@ function Chat(props) {
       console.log(`leaving room: ${props.roomId}`);
       socket.emit("leave_room", { "roomId": props.roomId });
     }
-  }, [])
+  }, []);
 
   return (
     <div className="chat-window">

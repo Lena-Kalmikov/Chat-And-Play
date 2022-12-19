@@ -22,11 +22,11 @@ function Users(props) {
   const [roomId, setRoomId] = useState("");
 
   const getOnlineUsers = () => {
-    socket.emit("load_online_users")
+    socket.emit("load_online_users");
   };
 
   const getOfflineUsers = () => {
-    socket.emit("load_offline_users")
+    socket.emit("load_offline_users");
   }
 
   const openChat = () => {
@@ -35,15 +35,15 @@ function Users(props) {
   }
 
   const onJoinChatConfirmation = () => {
-    socket.emit("join_room", { "request_answer": true, "roomId": roomId, "inviting_username": invitingUser })
-    console.log(`Joining chat room ${roomId}`)
+    socket.emit("join_room", { "request_answer": true, "roomId": roomId, "inviting_username": invitingUser });
+    console.log(`Joining chat room ${roomId}`);
     props.userWantsToChat(true);
-    setJoinRoomDialogOpen(false)
+    setJoinRoomDialogOpen(false);
   }
 
   const onJoinChatClose = () => {
-    socket.emit("join_room", { "request_answer": false, "roomId": roomId, "inviting_username": invitingUser })
-    setJoinRoomDialogOpen(false)
+    socket.emit("join_room", { "request_answer": false, "roomId": roomId, "inviting_username": invitingUser });
+    setJoinRoomDialogOpen(false);
   }
 
   const chosenUser = (username) => {
@@ -58,7 +58,7 @@ function Users(props) {
     getOfflineUsers();
 
     socket.on("online_user_list", (data) => {
-      let users = data.filter(function (user) { return user !== props.username })
+      let users = data.filter(function (user) { return user !== props.username });
       setOnlineUsersList(users);
     });
 
@@ -73,7 +73,7 @@ function Users(props) {
 
     socket.on("isLoggedIn", (data) => {
       if (!data.isLoggedIn) {
-        navigate("/")
+        navigate("/");
       }
     });
 
@@ -91,16 +91,16 @@ function Users(props) {
         props.userWantsToChat(true);
       }
       if (!data.isAccepted) {
-        alert(`The user has rejected your invite :(`)
+        alert(`The user has rejected your invite :(`);
       }
     });
 
     // when requesting to open a new room with someone, notify success request
     socket.on("on_room_opened", (data) => {
-      props.joinRoom(data.roomId)
+      props.joinRoom(data.roomId);
 
       if (data.error) {
-        alert(data.error)
+        alert(data.error);
         return
       }
     });

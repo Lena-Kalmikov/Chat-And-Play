@@ -6,11 +6,11 @@ import socket from "../services/socketIoService";
 function Login() {
 	let navigate = useNavigate();
 
-	const [username, setUsername] = useState("")
-	const [password, setPassword] = useState("")
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
 
 	const loginUser = async (event) => {
-		event.preventDefault()
+		event.preventDefault();
 
 		if (username !== "" && password !== "") {
 			const usersData = {
@@ -31,7 +31,7 @@ function Login() {
 	useEffect(() => {
 		socket.on("on_login_response", (data) => {
 			if (data.error) {
-				alert(data.error)
+				alert(data.error);
 			} else {
 				navigate("/TalkBack", { state: { "username": data.username } });
 			}

@@ -1,5 +1,5 @@
-import "./scoreBoard.css"
-import React from "react"
+import "./scoreBoard.css";
+import React from "react";
 
 export const ScoreBoard = ({ scores, xPlaying }) => {
   return (

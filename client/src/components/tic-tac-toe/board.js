@@ -1,6 +1,6 @@
-import "./board.css"
-import React from "react"
-import { Square } from "./square"
+import "./board.css";
+import React from "react";
+import { Square } from "./square";
 
 export const Board = ({ board, onClick }) => {
   return (

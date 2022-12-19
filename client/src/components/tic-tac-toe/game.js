@@ -45,12 +45,12 @@ function Game(props) {
         let { oScore } = scores;
         oScore += 1;
         setScores({ ...scores, oScore });
-        console.log(`O score is: ${oScore} `);
+        console.log(`O score is: ${oScore}`);
       } else {
         let { xScore } = scores;
         xScore += 1;
         setScores({ ...scores, xScore });
-        console.log(`X score is: ${xScore} `);
+        console.log(`X score is: ${xScore}`);
       }
       setGameOver(true);
       resetBoard();

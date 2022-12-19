@@ -5,19 +5,10 @@ import socket from "../services/socketIoService";
 
 
 function Chat(props) {
-
-  useEffect(() => {
-    return () => {
-      // Anything in here is fired on component unmount.
-      console.log(`leaving room: ${props.roomId}`)
-      socket.emit("leave_room", { "roomId": props.roomId })
-    }
-  }, [socket])
-
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
-  const sendMessage = async () => {
+  const sendMessage = () => {
     let hours = new Date(Date.now()).getHours();
     let minutes = new Date(Date.now()).getMinutes();
     minutes = minutes <= 9 ? "0" + minutes : minutes;
@@ -32,13 +23,11 @@ function Chat(props) {
           ":" +
           minutes,
       };
-
-      await socket.emit("send_message", messageData);
+      socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
     }
   };
-
   const backToUsers = () => {
     props.userWantsToChat(false);
   }
@@ -48,11 +37,18 @@ function Chat(props) {
       setMessageList((list) => [...list, data]);
     });
 
-    socket.on("on_leave_room", (data) => {
+    socket.on("on_leave_room", () => {
       backToUsers();
     });
-
   }, []);
+
+  useEffect(() => {
+    return () => {
+      // Anything in here is fired on component unmount.
+      console.log(`leaving room: ${props.roomId}`);
+      socket.emit("leave_room", { "roomId": props.roomId });
+    }
+  }, [])
 
   return (
     <div className="chat-window">
@@ -67,7 +63,7 @@ function Chat(props) {
               <div
                 className="message"
                 id={props.username === messageContent.username ? "you" : "other"}
-                key={messageList[messageContent]}>
+                key={messageList[messageContent.time][messageContent.username][messageContent.message]}>
                 <div>
                   <div className="message-content">
                     <p>{messageContent.message}</p>

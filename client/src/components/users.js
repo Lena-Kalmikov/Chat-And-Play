@@ -66,7 +66,7 @@ function Users(props) {
       setOfflineUsersList(data);
     });
 
-    socket.on("on_user_list_changed", (data) => {
+    socket.on("on_user_list_changed", () => {
       getOnlineUsers();
       getOfflineUsers();
     });

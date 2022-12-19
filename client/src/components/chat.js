@@ -8,7 +8,7 @@ function Chat(props) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     let hours = new Date(Date.now()).getHours();
     let minutes = new Date(Date.now()).getMinutes();
     minutes = minutes <= 9 ? "0" + minutes : minutes;
@@ -23,7 +23,7 @@ function Chat(props) {
           ":" +
           minutes,
       };
-      socket.emit("send_message", messageData);
+      await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
     }
@@ -63,7 +63,7 @@ function Chat(props) {
               <div
                 className="message"
                 id={props.username === messageContent.username ? "you" : "other"}
-                key={messageList[messageContent.time][messageContent.username][messageContent.message]}>
+                key={messageList[messageContent]}>
                 <div>
                   <div className="message-content">
                     <p>{messageContent.message}</p>

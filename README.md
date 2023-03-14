@@ -4,7 +4,7 @@ The goal of this project was to create a real-time chat app with an option to pl
 The only requirement was to deploy it with Azure. Technologies were of my choosing. 
 
 * Back-end: NodeJS, using Express and mainly Socket.IO.
-* Front-end: JavaScript using ReactJS, HTML, CSS.
+* Front-end: ReactJS.
 * Cloud: Azure.
 
 Application:

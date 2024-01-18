@@ -3,7 +3,7 @@
 The goal of this project was to create a real-time chat app with an option to play an online game with another person. 
 The only requirement was to deploy it with Azure. Technologies were of my choosing. 
 
-* Back-end: NodeJS, using Express and mainly Socket.IO.
+* Back-end: NodeJS, using Express and Socket.IO.
 * Front-end: ReactJS.
 * Cloud: Azure.
 
